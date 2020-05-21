@@ -1,15 +1,16 @@
 <div class="login" >
   <h3 style="color:black"></h3>
-<form class="inner" (ngSubmit)="onSubmit(email.value, password.value)">
+<form class="inner" (ngSubmit)="onSubmit(email.value, password.value)" >
   <h1 style="color:black">Login</h1>
   <div class="form-group">
     <label >Email address</label>
-    <input #email type="email" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="Enter email" required>
+    <input #email  type="email" name="email" class="form-control"   placeholder="Enter email" required>
   </div>
   <div class="form-group">
     <label >Password</label>
-    <input  #password type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+    <input  #password type="password" name="password" class="form-control"  placeholder="Password" required>
   </div>
-  <button type="submit" class="btn btn-primary">Login</button>
+  <button type="submit" class="btn btn-dark">Login</button>
+  <a style="margin-left:10%; color:grey" routerLink="/forgotp"> Forgot Password</a>
 </form>
 </div>

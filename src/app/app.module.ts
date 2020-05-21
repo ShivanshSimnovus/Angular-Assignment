@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { TableComponent } from './table/table.component';
+import { ForgotpComponent } from './forgotp/forgotp.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TableComponent } from './table/table.component';
     NavbarComponent,
     LoginPageComponent,
     SideBarComponent,
-    TableComponent
+    TableComponent,
+    ForgotpComponent
   ],
   imports: [
     BrowserModule,
