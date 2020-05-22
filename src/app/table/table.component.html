@@ -1,12 +1,18 @@
 <div class="small">
 <div class="md-form active-pink-2 mb-3">
-  <i class="fa fa-search" style="font-size:200%; color:black; position: absolute; margin-top: .5%;"></i>
-  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+  <i class="fa fa-search" style="font-size:200%; color:black; position: absolute; margin-top: .4%;"></i>
+  <form (keyup)="onsearch(searchstr, searchpara)" >
+  <input [(ngModel)]="searchstr" class="form-control" type="text"  placeholder="Search" name="ser">
+  <select  [(ngModel)]="searchpara" class="form-control select" name="searchparameter">
+        <option>firstname</option>
+        <option>lastname</option>
+        <option>email</option>
+  </select>
+  </form>
 </div>
 </div>
+
 <div class="container">
-  <h2>Bordered Table</h2>
-  <p>The .table-bordered class adds borders on all sides of the table and the cells:</p>
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -16,20 +22,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
+      <tr *ngFor="let data of display">
+        <td>{{data.firstname}}</td>
+        <td>{{data.lastname}}</td>
+        <td>{{data.email}}</td>
       </tr>
     </tbody>
   </table>

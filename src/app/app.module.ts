@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { TableComponent } from './table/table.component';
 import { ForgotpComponent } from './forgotp/forgotp.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ForgotpComponent } from './forgotp/forgotp.component';
     LoginPageComponent,
     SideBarComponent,
     TableComponent,
-    ForgotpComponent
+    ForgotpComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
