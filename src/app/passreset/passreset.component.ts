@@ -11,6 +11,7 @@ export class PassresetComponent implements OnInit {
 
   ngOnInit(): void {
   }
+   stat="Password";
   onSubmit(pass, conpass){
     var message:string="";
     if (pass.length < 10 || pass.length > 16 || pass.indexOf(" ") != -1||conpass.length < 10 || conpass.length > 16 || conpass.indexOf(" ") != -1) {
@@ -26,6 +27,18 @@ export class PassresetComponent implements OnInit {
     }
     else{
       alert("Both password not same");
+    }
+  }
+
+  clicked()
+  {
+    if(this.stat=="password")
+    {
+    this.stat="text";
+    }
+    else
+    {
+      this.stat="password";
     }
   }
 }
