@@ -16,6 +16,7 @@ import { MatListModule } from '@angular/material/list';
 import { TableComponent } from './table/table.component';
 import { ForgotpComponent } from './forgotp/forgotp.component';
 import { AboutComponent } from './about/about.component';
+import { PassresetComponent } from './passreset/passreset.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AboutComponent } from './about/about.component';
     SideBarComponent,
     TableComponent,
     ForgotpComponent,
-    AboutComponent
+    AboutComponent,
+    PassresetComponent
   ],
   imports: [
     BrowserModule,

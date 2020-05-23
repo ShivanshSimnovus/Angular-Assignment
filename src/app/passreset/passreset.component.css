@@ -1,0 +1,23 @@
+a:hover{
+  text-decoration: none;
+  color: grey;
+}
+.login{
+  width: 20%;
+  margin: auto;
+  margin-top: 8%;
+  border: double grey;
+  border-radius: 5px;
+   color:black;
+}
+.inner{
+  width: 90%;
+  margin: auto;
+  margin-top:10%;
+  margin-bottom: 10%;
+}
+@media only screen and (max-width: 700px) {
+  .login{
+    width:60%;
+  }
+}
