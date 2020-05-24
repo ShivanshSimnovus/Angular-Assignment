@@ -152,4 +152,52 @@ if(data[i].email.includes(ser))
     this.display=this.datasplit;
   }
  }
+ sortby(cat)
+ {
+   var i=0;
+   var j=0;
+   for(i=0;i<data.length;i++)
+   {
+     for(j=0;j<data.length-i-1;j++)
+     {
+       if(cat==="firstname")
+       {
+       if(data[j].firstname.localeCompare( data[j+1].firstname )>0)
+       {
+        var temp=data[j+1];
+         data[j+1]=data[j];
+         data[j]=temp;
+      }
+      }
+      if(cat==="lastname")
+      {
+      if(data[j].lastname.localeCompare( data[j+1].lastname )>0)
+      {
+       var temp=data[j+1];
+        data[j+1]=data[j];
+        data[j]=temp;
+     }
+     }
+     if(cat==="email")
+     {
+     if(data[j].email.localeCompare( data[j+1].email )>0)
+     {
+      var temp=data[j+1];
+       data[j+1]=data[j];
+       data[j]=temp;
+    }
+    }
+     }
+   }
+   var i=0;
+     //alert(this.end +"  "+this.start);
+   this.datasplit=new Array();
+   var track=0;
+   for(i=this.start;i<this.end;i++)
+   {
+     this.datasplit[track]=data[i];
+     track++;
+   }
+   this.display=this.datasplit;
+ }
 }

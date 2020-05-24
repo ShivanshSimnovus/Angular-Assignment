@@ -2,8 +2,8 @@
 <div class="md-form active-pink-2 mb-3">
   <i class="fa fa-search" style="font-size:200%; color:black; position: absolute; margin-top: .4%;"></i>
   <form (keyup)="onsearch(searchstr, searchpara)" >
-  <input [(ngModel)]="searchstr" class="form-control" type="text"  placeholder="Search" name="ser">
-  <select  [(ngModel)]="searchpara" class="form-control select" name="searchparameter">
+  <input [(ngModel)]="searchstr" class="form-control form-control-1" type="text"  placeholder="Search" name="ser">
+  <select  [(ngModel)]="searchpara" class="form-control select ab" name="searchparameter">
         <option>firstname</option>
         <option>lastname</option>
         <option>email</option>
@@ -12,10 +12,18 @@
 </div>
 </div>
 <div class="container">
-  <ul class="pagination">
+  <ul class="pagination ab">
    <li class="page-item "><a  style="color:black;" (click)="prev()">Previous</a></li>
    <li class="page-item"><a  style="color:black;" (click)="next()">Next</a></li>
   </ul>
+  <form class="sortform" >
+  <select required #sort  class="form-control sort" >
+        <option value="firstname">firstname</option>
+        <option value="lastname">lastname</option>
+        <option value="email">email</option>
+  </select>
+  <button type="submit" (click)="sortby(sort.value)" class="btn btn-dark left">sort</button>
+  </form>
   <table class="table table-bordered">
     <thead>
       <tr>
