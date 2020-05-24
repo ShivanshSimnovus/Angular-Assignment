@@ -14,6 +14,8 @@ import { Component, OnInit } from '@angular/core';
    {firstname:'rahul', lastname:'pandey', email:'xyz@gmail.com'},
    {firstname:'sunil', lastname:'pandey', email:'xyz@gmail.com'},
    {firstname:'vikram', lastname:'pandey', email:'xyz@gmail.com'},
+   {firstname:'vikram', lastname:'pandey', email:'xyz@gmail.com'},
+   {firstname:'vikram', lastname:'pandey', email:'xyz@gmail.com'},
    {firstname:'vikram', lastname:'pandey', email:'xyz@gmail.com'}
  ];
  @Component({
@@ -22,14 +24,91 @@ import { Component, OnInit } from '@angular/core';
    styleUrls: ['./table.component.css']
  })
 export class TableComponent implements OnInit {
-
-  constructor() { }
+  searchstr:string="";
+  display:tabledata[]=new Array();
+  searchpara:string="firstname";
+   datasplit:tabledata[]=new Array();
+   start=0;
+   end=5;
+  constructor() {
+    var i=0;
+    var track=0;
+    for(i=this.start;i<this.end;i++)
+    {
+      this.datasplit[track]=data[i];
+      track++;
+    }
+    this.display=this.datasplit;
+  }
 
   ngOnInit(): void {
   }
- display=data;
- searchstr:string="";
- searchpara:string="firstname";
+
+ next()
+ {
+   // alert(this.end +"  "+this.start);
+  if(this.end<data.length)
+  {
+  if(this.end+5<=data.length)
+  {
+   // alert(this.end +"  "+this.start);
+    this.start=this.end;
+    this.end=this.end+5;
+    var i=0;
+    this.datasplit=new Array();
+    var track=0;
+    for(i=this.start;i<this.end;i++)
+    {
+      this.datasplit[track]=data[i];
+      track++;
+    }
+    this.display=this.datasplit;
+  }
+  else
+  {
+    this.datasplit=new Array();
+    var track=0;
+    this.start=this.end;
+    this.end=data.length;
+    for(i=this.start;i<this.end;i++)
+    {
+      this.datasplit[track]=data[i];
+      track++;
+    }
+    this.display=this.datasplit;
+  }
+ }
+ else
+ {
+   var i=0;
+     //alert(this.end +"  "+this.start);
+   this.datasplit=new Array();
+   var track=0;
+   for(i=this.start;i<this.end;i++)
+   {
+     this.datasplit[track]=data[i];
+     track++;
+   }
+   this.display=this.datasplit;
+ }
+ }
+ prev()
+ {
+   var i=0;
+   var track=0;
+   this.datasplit=new Array();
+   if(this.end!=5)
+   {
+     this.end=this.start;
+     this.start=this.start-5;
+     for(i=this.start;i<this.end;i++)
+     {
+       this.datasplit[track]=data[i];
+       track++;
+     }
+     this.display=this.datasplit;
+   }
+ }
  onsearch(ser,para)
  {
   var i=0;
@@ -64,7 +143,13 @@ if(data[i].email.includes(ser))
   //console.log(searchdata);
 }
 }
+  }
+  if(ser.length!=0)
+  {
     this.display=searchdata;
+  }
+  else{
+    this.display=this.datasplit;
   }
  }
 }
